@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* ---------------- Planning ---------------- */
+
+.planning-container {
+  max-width: 917px;
+  height: 85vh;
+  margin: 5vh auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+.planning-header {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 120px);
+  background-color: #a893f5;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.hour-header {
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-weight: bold;
+  border-right: 1px solid #ccc;
+}
+
+.day-header {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-left: 1px solid #ddd;
+}
+
+.planning-body {
+  display: flex;
+}
+
+.hour-column {
+  width: 60px;
+  background-color: #f0f0f0;
+  border-right: 1px solid #ccc;
+}
+
+.hour-cell {
+  height: 60px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.day-columns {
+  display: grid;
+  grid-template-columns: repeat(7, 120px);
+  position: relative;
+}
+
+.day-column {
+  position: relative;
+  border-left: 1px solid #ccc;
+}
+
+.hour-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #cccccc;
+  opacity: 0.6;
+}
+
+.day-cell {
+  position: relative;
+  width: 100%;
+  height: 1440px;
+  /* 24h x 60min */
+}
+
+.day-cell:hover {
+  background-color: #f0f0f0;
+}
+
+/* ---------------- Événements ---------------- */
+
+.creneau {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* ---------------- Formulaire & Popup ---------------- */
+
+.formulaire {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  min-width: 260px;
+}
+
+.formulaire label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.formulaire input {
+  margin-left: 5px;
+}
+
+.formulaire button {
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3f51b5;
+  color: white;
+  cursor: pointer;
+}
+
+.formulaire button:hover {
+  opacity: 0.9;
+}
+
+/* ---------------- Navigation ---------------- */
+
+.week-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.week-label {
+  margin-bottom: 5px;
+}
+
+.nav-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.week-display {
+  font-weight: bold;
+  min-width: 120px;
+  text-align: center;
+}
+
+.week-navigation button {
+  font-size: 20px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3f51b5;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-clear {
+  background-color: #3f51b5;
+  color: #fff;
+  position: fixed;
+  top: 33px;
+  left: 650px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.current-time-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: red;
+  z-index: 5;
+}
+
+#popup-supprimer {
+  background: #b73737;
+}
+
+#popup-fermer {
+  background: #777;
+}

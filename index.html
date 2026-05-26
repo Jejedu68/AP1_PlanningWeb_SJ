@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planning</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="week-navigation">
+    <div class="week-label">Semaine :</div>
+    <div class="nav-row">
+      <button id="prev-week">&lt;</button>
+      <div id="week-display" class="week-display"></div>
+      <button id="next-week">&gt;</button>
+    </div>
+  </div>
+
+  <button id="btn-clear" class="btn-clear">Vider semaine</button>
+
+  <div class="planning-container">
+    <div class="planning-header">
+      <div class="hour-header">Heure</div>
+    </div>
+
+    <div class="planning-body">
+      <div class="hour-column"></div>
+      <div class="day-columns"></div>
+    </div>
+  </div>
+
+  <!-- Formulaire création / modification -->
+  <form id="formulaire" class="formulaire" style="display:none;">
+    <label>Libellé : <input type="text" id="libelle" /></label>
+    <label>Début : <input type="datetime-local" id="debut" /></label>
+    <label>Fin : <input type="datetime-local" id="fin" /></label>
+    <label>Couleur : <input type="color" id="couleur" /></label>
+
+    <button id="valider">Valider</button>
+    <button id="annuler">Annuler</button>
+  </form>
+
+  <!-- POPUP INFOS EVENEMENT -->
+  <div id="popup-event" class="formulaire" style="display:none;">
+    <h3 id="popup-titre"></h3>
+    <p><strong>Début :</strong> <span id="popup-debut"></span></p>
+    <p><strong>Fin :</strong> <span id="popup-fin"></span></p>
+
+    <button type="button" id="popup-modifier">Modifier</button>
+    <button type="button" id="popup-supprimer">Supprimer</button>
+    <button type="button" id="popup-fermer">Fermer</button>
+
+  </div>
+
+  <script src="js/dates.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/evenement.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/planning.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/form-popup.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/current-time-line.js"></script>
+
+</body>
+
+</html>
